@@ -188,9 +188,14 @@ function About() {
                     >
                     <img 
                         src={member.imageUrl}
-                        alt={'${member.name} - ${member.role}'}
+                        alt={`${member.name} - ${member.role}`}
+                        loading="lazy"
+                        onError={(e) => {
+                            console.error(`Erreur de chargement pour ${member.imageUrl}`);
+                            e.currentTarget.src = '/images/placeholder.jpg';
+                        }}
                         className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-                    />
+                        />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                         <div className="text-white">
                         <p className="font-bold">{member.name}</p>

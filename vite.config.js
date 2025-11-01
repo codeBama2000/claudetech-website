@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/',  // Changé de "./" à "/"
   server: {
     port: 3000,
     open: true
@@ -12,6 +12,8 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
+    assetsDir: 'assets',  // Ajouté
+    copyPublicDir: true,  // Ajouté
     rollupOptions: {
       onwarn: (warning, warn) => {
         if (warning.code === 'THIS_IS_UNDEFINED') return
