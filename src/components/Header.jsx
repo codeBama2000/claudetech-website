@@ -37,17 +37,35 @@ function Header() {
         >
         <nav className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-            {/* Logo */}
-            <img 
-                src="../../public/images/logo.png" 
-                alt="mon entreprise" 
-                className="w-10 h-10 mr-2 md:w-12 md:h-12 hover:animate-spin transition duration-300"
-            />  
-            <span className="text-2xl font-roboto font-bold text-gray-600">{config.site.name}</span>
+            {/* Logo avec image */}
+               
+            <div 
+                className="flex items-center space-x-3 cursor-pointer group" 
+                onClick={() => scrollToSection('accueil')}
+            >
+                {/* Logo circulaire avec dégradé */}
+                <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <img 
+                    src="../../public/images/logo.png" 
+                    alt="mon logo" 
+                    className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+                />
+                </div>
+                {/* Point vert "en ligne" */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
+                </div>
+                
+                <div>
+                <span className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition">
+                    {config.site.name}
+                </span>
+                <p className="text-xs text-gray-500">Réparation Express</p>
+                </div>
             </div>
             
             {/* Menu Desktop */}
-            <div className="hidden md:flex items-center space-x-8 pt-2">
+            <div className="hidden md:flex items-center space-x-8">
                 <button 
                 onClick={() => scrollToSection('accueil')} 
                 className="text-gray-700 hover:text-blue-600 transition font-medium"
@@ -73,19 +91,19 @@ function Header() {
                 À propos
                 </button>
                 
-                {/* Bouton téléphone */}
+                {/* Bouton téléphone avec animation */}
                 <a 
                 href={`tel:${config.contact.phone}`}
                 onClick={handlePhoneClick}
-                className="hidden lg:flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition font-medium"
+                className="hidden lg:flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition font-medium bg-blue-50 px-4 py-2 rounded-lg hover:bg-blue-100"
                 >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 animate-pulse" />
                 <span>{config.contact.phone}</span>
                 </a>
                 
                 <button 
                 onClick={() => scrollToSection('contact')} 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md hover:shadow-lg"
                 >
                 Contact
                 </button>
@@ -99,7 +117,7 @@ function Header() {
             >
                 {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-            
+            </div>
 
             {/* Menu Mobile */}
             {isMenuOpen && (
@@ -130,7 +148,7 @@ function Header() {
                 </button>
                 
                 {/* Lien téléphone mobile */}
-                <a
+                <a 
                 href={`tel:${config.contact.phone}`}
                 onClick={handlePhoneClick}
                 className="flex items-center space-x-2 text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition font-medium"
@@ -150,6 +168,6 @@ function Header() {
         </nav>
         </header>
     );
-    }
+}
 
-    export default Header;
+export default Header;

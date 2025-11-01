@@ -15,10 +15,10 @@ function Hero() {
     return (
         <section id="accueil" className="pt-24 pb-20 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
         <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Texte */}
-            <div className="md:w-1/2 mb-10 md:mb-0 z-10">
-                <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="md:w-1/2 z-10">
+                <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-bounce">
                 ⚡ Réparation Express
                 </div>
                 
@@ -48,7 +48,7 @@ function Hero() {
                 
                 {/* Features */}
                 <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
                     <div className="bg-blue-100 p-2 rounded-lg">
                     <Clock className="w-5 h-5 text-blue-600" />
                     </div>
@@ -58,7 +58,7 @@ function Hero() {
                     </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
                     <div className="bg-blue-100 p-2 rounded-lg">
                     <Shield className="w-5 h-5 text-blue-600" />
                     </div>
@@ -68,7 +68,7 @@ function Hero() {
                     </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
                     <div className="bg-blue-100 p-2 rounded-lg">
                     <Award className="w-5 h-5 text-blue-600" />
                     </div>
@@ -78,7 +78,7 @@ function Hero() {
                     </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
                     <div className="bg-blue-100 p-2 rounded-lg">
                     <Phone className="w-5 h-5 text-blue-600" />
                     </div>
@@ -90,27 +90,41 @@ function Hero() {
                 </div>
             </div>
 
-            {/* Image/Illustration */}
+            {/* Image avec effet 3D */}
             <div className="md:w-1/2 flex justify-center relative">
                 <div className="relative">
+                {/* Image principale depuis Unsplash */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
                     <img 
-                        src="../../public/images/hero.jpg" 
-                        alt="Reparation de telephones à Bobo-Dioulasso"
-                        className="rounded-2xl shadow-2xl w-full max-w-lg object-cover h-96"
-                        loading="eager"
+                    src="../../public/images/hero.jpg"
+                    alt="Réparation de téléphones professionnelle"
+                    className="w-full h-96 md:h-[500px] object-cover"
+                    loading="eager"
                     />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
+                </div>
                 
-                {/* Icône principale */}
-                <div className="relative bg-white p-12 rounded-3xl shadow-2xl">
-                    <Phone className="w-64 h-64 text-blue-600" strokeWidth={1.5} />
-                    
-                    {/* Badges flottants */}
-                    <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce">
-                    En ligne
+                {/* Cercles décoratifs en arrière-plan */}
+                <div className="absolute -top-10 -left-10 w-72 h-72 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-blue-300 rounded-full opacity-20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                
+                {/* Badges flottants */}
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl animate-bounce">
+                    <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    <span>En ligne</span>
                     </div>
-                    
-                    <div className="absolute -bottom-4 -left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                    4.9 ⭐ (127 avis)
+                </div>
+                
+                <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 px-6 py-4 rounded-2xl font-bold shadow-2xl">
+                    <div className="flex items-center space-x-2">
+                    <span className="text-2xl">⭐</span>
+                    <div>
+                        <p className="text-lg">4.9/5</p>
+                        <p className="text-xs text-gray-500">127 avis</p>
+                    </div>
                     </div>
                 </div>
                 </div>
@@ -118,22 +132,25 @@ function Hero() {
             </div>
             
             {/* Trust Badges */}
-            <div className="mt-16 pt-8 border-t border-gray-200">
+            <div className="mt-20 pt-8 border-t border-gray-200">
             <p className="text-center text-gray-600 mb-6 font-medium">
                 Nous réparons toutes les marques
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-                <span className="text-2xl font-bold text-gray-600">Apple</span>
-                <span className="text-2xl font-bold text-gray-600">Samsung</span>
-                <span className="text-2xl font-bold text-gray-600">Huawei</span>
-                <span className="text-2xl font-bold text-gray-600">Xiaomi</span>
-                <span className="text-2xl font-bold text-gray-600">Oppo</span>
-                <span className="text-2xl font-bold text-gray-600">Tecno</span>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                {['Apple', 'Samsung', 'Huawei', 'Xiaomi', 'Oppo', 'Tecno'].map((brand, index) => (
+                <div 
+                    key={brand}
+                    className="text-2xl font-bold text-gray-400 hover:text-gray-700 transition cursor-default transform hover:scale-110 duration-300"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                    {brand}
+                </div>
+                ))}
             </div>
             </div>
         </div>
         </section>
     );
-    }
+}
 
-    export default Hero;
+export default Hero;
