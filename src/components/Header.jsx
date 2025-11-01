@@ -91,19 +91,9 @@ function Header() {
                 À propos
                 </button>
                 
-                {/* Bouton téléphone avec animation */}
-                <a 
-                href={`tel:${config.contact.phone}`}
-                onClick={handlePhoneClick}
-                className="hidden lg:flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition font-medium bg-blue-50 px-4 py-2 rounded-lg hover:bg-blue-100"
-                >
-                <Phone className="w-4 h-4 animate-pulse" />
-                <span>{config.contact.phone}</span>
-                </a>
-                
                 <button 
                 onClick={() => scrollToSection('contact')} 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md hover:shadow-lg"
+                className="text-gray-700 hover:text-blue-600 transition font-medium"
                 >
                 Contact
                 </button>

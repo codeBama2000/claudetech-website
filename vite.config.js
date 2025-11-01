@@ -13,6 +13,10 @@ export default defineConfig({
     sourcemap: false,
     minify: 'terser',
     rollupOptions: {
+      onwarn: (warning, warn) => {
+        if (warning.code === 'THIS_IS_UNDEFINED') return
+        warn(warning)
+      },
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
