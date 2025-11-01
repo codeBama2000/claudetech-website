@@ -39,17 +39,17 @@ function About() {
         {
         name: "Claude O",
         role: "Technicien",
-        imageUrl: "../../public/images/team/claudie.jpg"
+        imageUrl: "/images/team/claudie.jpg"
         },
         {
         name: "Aboubakar S",
         role: "Technicien",
-        imageUrl: "../../public/images/team/aboubacar.jpg"
+        imageUrl: "/images/team/aboubacar.jpg"
         },
         {
         name: "Nanica",
         role: "Technicien",
-        imageUrl: "../../public/images/team/nanica.jpeg"
+        imageUrl: "/images/team/nanica.jpeg"
         }
     ];
     
@@ -108,7 +108,7 @@ function About() {
                 <div className="relative">
                     <div className="rounded-2xl overflow-hidden shadow-2xl">
                     <img 
-                        src="../../public/images/team/atelier.webp"
+                        src="/images/team/atelier.webp"
                         alt="Atelier de réparation ClaudeTech"
                         className="w-full h-80 object-cover hover:scale-105 transition duration-500"
                     />

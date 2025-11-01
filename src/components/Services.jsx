@@ -7,7 +7,7 @@ function Services() {
     const services = [
         {
         icon: Monitor,
-        imageUrl: "../../public/images/services/screen-repair.webp",
+        imageUrl: "/images/services/screen-repair.webp",
         title: "Écran cassé",
         description: "Remplacement d'écran LCD/OLED avec pièces d'origine. Test complet du tactile et de l'affichage.",
         features: ["Écran d'origine", "30 minutes", "Garantie 6 mois"],
@@ -15,7 +15,7 @@ function Services() {
         },
         {
         icon: Battery,
-        imageUrl: "../../public/images/services/battery.webp",
+        imageUrl: "/images/services/battery.webp",
         title: "Batterie",
         description: "Remplacement de batterie défectueuse. Batteries certifiées haute capacité pour une autonomie optimale.",
         features: ["Batterie certifiée", "20 minutes", "Test capacité"],
@@ -23,7 +23,7 @@ function Services() {
         },
         {
         icon: Droplet,
-        imageUrl: "../../public/images/services/water-damage.webp",
+        imageUrl: "/images/services/water-damage.webp",
         title: "Oxydation",
         description: "Nettoyage professionnel après contact avec l'eau. Traitement anti-oxydation et séchage complet.",
         features: ["Diagnostic gratuit", "Nettoyage complet", "24-48h"],
@@ -31,7 +31,7 @@ function Services() {
         },
         {
         icon: Wrench,
-        imageUrl: "../../public/images/services/charging-port.webp",
+        imageUrl: "/images/services/charging-port.webp",
         title: "Connectique",
         description: "Réparation port de charge, boutons, haut-parleur, micro et connecteurs audio.",
         features: ["Port USB-C/Lightning", "45 minutes", "Test fonctionnel"],
@@ -39,7 +39,7 @@ function Services() {
         },
         {
         icon: Camera,
-        imageUrl: "../../public/images/services/camera.webp",
+        imageUrl: "/images/services/camera.webp",
         title: "Caméra",
         description: "Remplacement caméra avant/arrière défectueuse. Calibrage et test qualité photo/vidéo.",
         features: ["Caméra d'origine", "40 minutes", "Test qualité"],
@@ -47,7 +47,7 @@ function Services() {
         },
         {
         icon: Shield,
-        imageUrl: "../../public/images/services/software.webp",
+        imageUrl: "/images/services/software.webp",
         title: "Logiciel",
         description: "Déblocage, réinitialisation, mise à jour système et suppression virus.",
         features: ["Sauvegarde données", "1-2 heures", "Optimisation"],

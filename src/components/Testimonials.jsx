@@ -6,7 +6,7 @@ function Testimonials() {
     const testimonials = [
         {
         name: "Amadou K.",
-        imageUrl: "../../public/images/testimonials/client-1.webp",
+        imageUrl: "/images/testimonials/client-1.webp",
         role: "Client depuis 2024",
         comment: "Réparation rapide et professionnelle. Mon iPhone fonctionne comme neuf. Je recommande vivement ClaudeTech pour leur sérieux et leur expertise.",
         rating: 5,
@@ -14,7 +14,7 @@ function Testimonials() {
         },
         {
         name: "Fatou S.",
-        imageUrl: "../../public/images/testimonials/client-4.webp",
+        imageUrl: "/images/testimonials/client-4.webp",
         role: "Cliente depuis 2023",
         comment: "Excellent service, tarifs honnêtes et garantie respectée. Mon Samsung est réparé en 30 minutes chrono. L'équipe est très accueillante.",
         rating: 5,
@@ -22,7 +22,7 @@ function Testimonials() {
         },
         {
         name: "Ibrahim T.",
-        imageUrl: "../../public/images/testimonials/client-2.webp",
+        imageUrl: "/images/testimonials/client-2.webp",
         role: "Client depuis 2024",
         comment: "Équipe compétente et accueillante. Mon téléphone tombé dans l'eau a été sauvé. Merci ClaudeTech pour votre professionnalisme !",
         rating: 5,
@@ -30,7 +30,7 @@ function Testimonials() {
         },
         {
             name: "Bama S.",
-            imageUrl: "../../public/images/testimonials/client-3.jpg",
+            imageUrl: "/images/testimonials/client-3.jpg",
             role: "Client depuis 2023",
             comment: "Réparation rapide et fiable. Mes appareils sont toujours en parfait fonctionnement. Je recommande ClaudeTech pour leurs services de haute qualité.",
             rating: 5,

@@ -38,7 +38,7 @@ function Header() {
         <nav className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
             {/* Logo avec image */}
-               
+            
             <div 
                 className="flex items-center space-x-3 cursor-pointer group" 
                 onClick={() => scrollToSection('accueil')}
@@ -47,7 +47,7 @@ function Header() {
                 <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <img 
-                    src="../../public/images/logo.png" 
+                    src="/images/logo.png" 
                     alt="mon logo" 
                     className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
                 />

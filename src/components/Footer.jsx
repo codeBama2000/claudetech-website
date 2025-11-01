@@ -88,8 +88,8 @@ function Footer() {
             {/* Image de fond subtile */}
             <div className="absolute inset-0 opacity-5">
             <img 
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80"
-                alt=""
+                src="/images/placeholder.webp"
+                alt="mon image"
                 className="w-full h-full object-cover"
             />
             </div>
@@ -126,7 +126,7 @@ function Footer() {
                 <div className="flex items-center space-x-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
                     <img 
-                    src="../../public/images/logo.png" 
+                    src="/images/logo.png" 
                     alt="mon logo" 
                     className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
                 />

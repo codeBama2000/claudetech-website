@@ -96,7 +96,7 @@ function Hero() {
                 {/* Image principale depuis Unsplash */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
                     <img 
-                    src="../../public/images/hero.jpg"
+                    src="/images/hero.jpg"
                     alt="Réparation de téléphones professionnelle"
                     className="w-full h-96 md:h-[500px] object-cover"
                     loading="eager"
