@@ -32,7 +32,9 @@ function Header() {
     return (
         <header 
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-            isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-sm'
+            isScrolled 
+                ? 'glass shadow-xl border-b border-white/20 backdrop-blur-xl' 
+                : 'glass shadow-lg border-b border-white/10 backdrop-blur-lg'
         }`}
         >
         <nav className="container mx-auto px-4 py-4">
@@ -45,11 +47,11 @@ function Header() {
             >
                 {/* Logo circulaire avec dégradé */}
                 <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform overflow-hidden">
                 <img 
                     src="/images/logo.png" 
-                    alt="mon logo" 
-                    className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+                    alt="Logo ClaudeTech" 
+                    className="w-full h-full object-cover"
                 />
                 </div>
                 {/* Point vert "en ligne" */}
@@ -68,32 +70,59 @@ function Header() {
             <div className="hidden md:flex items-center space-x-8">
                 <button 
                 onClick={() => scrollToSection('accueil')} 
-                className="text-gray-700 hover:text-blue-600 transition font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
                 >
-                Accueil
+                <span className="relative z-10">Accueil</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
                 <button 
                 onClick={() => scrollToSection('services')} 
-                className="text-gray-700 hover:text-blue-600 transition font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
                 >
-                Services
+                <span className="relative z-10">Services</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
                 <button 
                 onClick={() => scrollToSection('tarifs')} 
-                className="text-gray-700 hover:text-blue-600 transition font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
                 >
-                Tarifs
+                <span className="relative z-10">Tarifs</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </button>
+                <button 
+                onClick={() => scrollToSection('formations')} 
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
+                >
+                <span className="relative z-10">Formations</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
                 <button 
                 onClick={() => scrollToSection('apropos')} 
-                className="text-gray-700 hover:text-blue-600 transition font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
                 >
-                À propos
+                <span className="relative z-10">À propos</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </button>
+                
+                <button 
+                onClick={() => scrollToSection('faq')} 
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
+                >
+                <span className="relative z-10">FAQ</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </button>
+                
+                <button 
+                onClick={() => scrollToSection('blog')} 
+                className="text-gray-700 hover:text-blue-600 transition-all font-semibold px-3 py-2 rounded-lg hover:bg-blue-50 relative group"
+                >
+                <span className="relative z-10">Blog</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
                 
                 <button 
                 onClick={() => scrollToSection('contact')} 
-                className="text-gray-700 hover:text-blue-600 transition font-medium"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                 Contact
                 </button>
@@ -131,10 +160,30 @@ function Header() {
                 Tarifs
                 </button>
                 <button 
+                onClick={() => scrollToSection('formations')} 
+                className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition font-medium"
+                >
+                Formations
+                </button>
+                <button 
                 onClick={() => scrollToSection('apropos')} 
                 className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition font-medium"
                 >
                 À propos
+                </button>
+                
+                <button 
+                onClick={() => scrollToSection('faq')} 
+                className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition font-medium"
+                >
+                FAQ
+                </button>
+                
+                <button 
+                onClick={() => scrollToSection('blog')} 
+                className="block w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition font-medium"
+                >
+                Blog
                 </button>
                 
                 {/* Lien téléphone mobile */}

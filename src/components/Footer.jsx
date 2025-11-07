@@ -28,7 +28,10 @@ function Footer() {
         { name: "Accueil", id: "accueil" },
         { name: "Services", id: "services" },
         { name: "Tarifs", id: "tarifs" },
+        { name: "Formations", id: "formations" },
         { name: "À propos", id: "apropos" },
+        { name: "FAQ", id: "faq" },
+        { name: "Blog", id: "blog" },
         { name: "Contact", id: "contact" }
         ],
         legal: [
@@ -89,8 +92,12 @@ function Footer() {
             <div className="absolute inset-0 opacity-5">
             <img 
                 src="/images/placeholder.webp"
-                alt="mon image"
+                alt=""
                 className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                }}
             />
             </div>
             
@@ -124,11 +131,11 @@ function Footer() {
             {/* À propos avec logo */}
             <div>
                 <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center overflow-hidden">
                     <img 
                     src="/images/logo.png" 
-                    alt="mon logo" 
-                    className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+                    alt="Logo ClaudeTech" 
+                    className="w-full h-full object-cover"
                 />
                 </div>
                 <span className="text-2xl font-bold">{config.site.name}</span>

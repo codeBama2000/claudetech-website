@@ -110,6 +110,15 @@ function About() {
                     <img 
                         src="/images/team/atelier.webp"
                         alt="Atelier de réparation ClaudeTech"
+                        loading="lazy"
+                        onError={(e) => {
+                            if (e.currentTarget.src !== `${window.location.origin}/images/placeholder.webp`) {
+                                console.error('Erreur de chargement de l\'image de l\'atelier');
+                                e.currentTarget.src = '/images/placeholder.webp';
+                            } else {
+                                e.currentTarget.style.display = 'none';
+                            }
+                        }}
                         className="w-full h-80 object-cover hover:scale-105 transition duration-500"
                     />
                     
@@ -191,8 +200,14 @@ function About() {
                         alt={`${member.name} - ${member.role}`}
                         loading="lazy"
                         onError={(e) => {
-                            console.error(`Erreur de chargement pour ${member.imageUrl}`);
-                            e.currentTarget.src = '/images/placeholder.jpg';
+                            // Éviter les boucles infinies si le placeholder échoue aussi
+                            if (e.currentTarget.src !== `${window.location.origin}/images/placeholder.webp`) {
+                                console.error(`Erreur de chargement pour ${member.imageUrl}`);
+                                e.currentTarget.src = '/images/placeholder.webp';
+                            } else {
+                                // Si le placeholder échoue aussi, masquer l'image
+                                e.currentTarget.style.display = 'none';
+                            }
                         }}
                         className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
                         />

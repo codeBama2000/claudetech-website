@@ -98,6 +98,15 @@ function Testimonials() {
                     <img 
                         src={testimonial.imageUrl} 
                         alt={testimonial.name}
+                        loading="lazy"
+                        onError={(e) => {
+                            if (e.currentTarget.src !== `${window.location.origin}/images/placeholder.webp`) {
+                                console.error(`Erreur de chargement pour ${testimonial.imageUrl}`);
+                                e.currentTarget.src = '/images/placeholder.webp';
+                            } else {
+                                e.currentTarget.style.display = 'none';
+                            }
+                        }}
                         className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-blue-200"
                     />
                     

@@ -75,7 +75,7 @@ function Pricing() {
             badge: null
         },
         {
-            name: "Fourreaux ",
+            name: "Fourreaux",
             subtitle: "Pour les budgets serrés",
             price: "25 000",
             features: [
@@ -84,7 +84,9 @@ function Pricing() {
                 "Installation 30 minutes",
                 "Installation incluse",
                 "Nettoyage complet"
-            ]
+            ],
+            popular: false,
+            badge: null
         },
         {
             name: "Autres services",
