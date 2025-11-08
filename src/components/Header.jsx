@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import { logButtonClick, logPhoneCall } from '../utils/analytics';
 import config from '../config';
@@ -6,6 +7,9 @@ import config from '../config';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isHomePage = location.pathname === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,11 +21,32 @@ function Header() {
     }, []);
 
     const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        if (!isHomePage) {
+            // Si on n'est pas sur la page d'accueil, naviguer vers la page d'accueil avec le hash
+            navigate(`/#${id}`);
+            // Attendre que la page soit chargée puis scroller
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            // Si on est déjà sur la page d'accueil, scroller directement
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         setIsMenuOpen(false);
         logButtonClick(`Navigation - ${id}`);
+    };
+
+    const handleLogoClick = () => {
+        if (!isHomePage) {
+            navigate('/');
+        } else {
+            scrollToSection('accueil');
         }
     };
 
@@ -43,7 +68,7 @@ function Header() {
             
             <div 
                 className="flex items-center space-x-3 cursor-pointer group" 
-                onClick={() => scrollToSection('accueil')}
+                onClick={handleLogoClick}
             >
                 {/* Logo circulaire avec dégradé */}
                 <div className="relative">

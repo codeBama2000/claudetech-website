@@ -35,9 +35,9 @@ function Footer() {
         { name: "Contact", id: "contact" }
         ],
         legal: [
-        { name: "Mentions légales", href: "#" },
-        { name: "Politique de confidentialité", href: "#" },
-        { name: "CGV", href: "#" }
+        { name: "Mentions légales", href: "/mentions-legales" },
+        { name: "Politique de confidentialité", href: "/politique-confidentialite" },
+        { name: "CGV", href: "/cgv" }
         ]
     };
 
@@ -222,6 +222,7 @@ function Footer() {
                     <li key={index}>
                         <a 
                         href={link.href}
+                        onClick={() => logEvent('Footer', 'Legal Link Click', link.name)}
                         className="text-gray-400 hover:text-blue-400 transition text-xs"
                         >
                         {link.name}
